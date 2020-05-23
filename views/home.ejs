@@ -1,0 +1,15 @@
+<!--Adding Header.ejs-->
+<%- include('partials/header'); -%>
+<!--Adding complete-->
+<h1>Home</h1>
+<p><%= homeStartingContentBlog %></p>
+<!--Using the scriptlet tags for defining the javascript languages-->
+<% posts.forEach(function(post){ %>
+	<h1> <%= post.title %> </h1>
+	<p> <%= post.body.substring(0,100) + "....." %> 
+	<a href="/posts/<%= post.title %>">ReadMore</a> </p>
+<% }); %>
+
+<!--Adding footer.ejs-->
+<%- include('partials/footer'); -%>
+<!--Adding complete-->
